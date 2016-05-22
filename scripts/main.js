@@ -1,1 +1,9 @@
-"use strict";var contentForContact=suparn.templates.contact(),contentForAbout=suparn.templates.about(),contentForHowToApply=suparn.templates.howToApply(),contentForHowToDonate=suparn.templates.howToDonate(),contentForHome=suparn.templates.home(),mainContent=document.getElementById("mainContent"),allMenuItems=document.querySelectorAll(".header li"),makeCurrentActiveItemInactive=function(){var e=document.querySelector(".header li.active");e.classList.remove("active")},homePageHandler=function(){makeCurrentActiveItemInactive(),mainContent.innerHTML=contentForHome,allMenuItems[0].classList.add("active")},aboutHandler=function(){makeCurrentActiveItemInactive(),mainContent.innerHTML=contentForAbout,allMenuItems[1].classList.add("active")},howToApplyHandler=function(){makeCurrentActiveItemInactive(),mainContent.innerHTML=contentForHowToApply,allMenuItems[2].classList.add("active")},howToDonateHandler=function(){makeCurrentActiveItemInactive(),mainContent.innerHTML=contentForHowToDonate,allMenuItems[3].classList.add("active")},contactHandler=function(){makeCurrentActiveItemInactive(),mainContent.innerHTML=contentForContact,allMenuItems[4].classList.add("active")};page(),page("/",homePageHandler),page("/contact",contactHandler),page("/howToApply",howToApplyHandler),page("/howToDonate",howToDonateHandler),page("/about",aboutHandler),page("/");
+smoothScroll.init();
+
+$(document).ready(function () {
+   $('ul.nav > li').click(function (e) {
+      e.preventDefault();
+      $('ul.nav > li').removeClass('active');
+      $(this).addClass('active');
+   });
+});
